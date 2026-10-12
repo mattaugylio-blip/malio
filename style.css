@@ -1,0 +1,585 @@
+
+/* ========================================
+   MALIO® — EXPERIMENTAL MINIMALISM
+   Muted Earth Tone / Visual Archive
+======================================== */
+
+:root {
+    --color-bg: #E9E3D8;
+    --color-text: #292923;
+    --color-muted: #827D70;
+    --color-accent: #A36F52;
+    --color-olive: #77765C;
+    --color-line: #C9C1B4;
+    --color-card: #DCD4C7;
+
+--font-display: "Space Grotesk", sans-serif;
+--font-body: "DM Mono", monospace;
+
+
+    --page-padding: 5%;
+}
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+::selection {
+    background: var(--color-accent);
+    color: var(--color-bg);
+}
+
+/* NAVIGATION */
+
+.site-header {
+    min-height: 72px;
+padding: 18px var(--page-padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    border-bottom: 1px solid var(--color-line);
+position: sticky;
+top: 0;
+z-index: 1000;
+background: var(--color-bg);
+
+background: rgba(233, 227, 216, 0.92);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+
+
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -1.8px;
+}
+
+.logo span {
+    font-size: 10px;
+    vertical-align: top;
+    margin-left: 3px;
+}
+
+.navigation {
+    display: flex;
+    gap: 30px;
+}
+
+.navigation a,
+.availability,
+.eyebrow,
+.hero-index,
+.explore-link,
+.work-caption p,
+.work-image span,
+.about-mark,
+.contact-link,
+.site-footer p {
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 1.7;
+}
+
+.navigation a,
+.explore-link,
+.contact-link {
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover,
+.explore-link:hover,
+.contact-link:hover {
+    color: var(--color-accent);
+}
+
+.availability {
+    color: var(--color-muted);
+    text-align: right;
+}
+
+/* NAVIGATION HOVER EFFECT */
+
+.navigation a {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--color-accent);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 590px;
+    padding: 110px var(--page-padding) 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.eyebrow {
+    color: var(--color-muted);
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 2.5px;
+    line-height: 1.8;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin: 65px 0 85px;
+    font-size: clamp(58px, 10.5vw, 150px);
+    line-height: 0.83;
+    letter-spacing: -0.095em;
+    font-weight: 800;
+    font-family: var(--font-display);
+}
+
+.hero h1 span:first-of-type {
+    color: var(--color-accent);
+}
+
+.hero h1 .period {
+    color: var(--color-olive);
+}
+
+.hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 25px;
+}
+
+.hero-bottom p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--color-muted);
+}
+
+.explore-link {
+    border-bottom: 1px solid var(--color-text);
+    padding-bottom: 5px;
+}
+
+.hero-index {
+    color: var(--color-muted);
+}
+
+/* SELECTED WORKS */
+
+/* PORTFOLIO IMAGE */
+
+.work-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.85);
+    transition: transform 0.6s ease;
+}
+
+
+.work-item:hover .work-image img {
+    transform: scale(1.03);
+    filter: saturate(1);
+}
+
+
+
+.work-section {
+    padding: 100px var(--page-padding) 130px;
+    border-top: 1px solid var(--color-line);
+}
+
+
+.section-heading {
+    margin-bottom: 70px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-line);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.section-heading .eyebrow {
+    max-width: 220px;
+}
+
+.section-heading h2 {
+    font-size: clamp(30px, 5vw, 62px);
+    letter-spacing: -0.06em;
+    font-weight: 600;
+    margin-top: 15px;
+    font-family: var(--font-display);
+}
+
+.section-heading h2 span {
+    font-size: 12px;
+    letter-spacing: 0;
+    color: var(--color-muted);
+    vertical-align: top;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    column-gap: 8%;
+    row-gap: 100px;
+    align-items: start;
+}
+
+.work-large {
+    grid-column: 1;
+}
+
+.work-offset {
+    grid-column: 2;
+    margin-top: 180px;
+}
+
+.work-item:nth-child(3) {
+    grid-column: 1;
+    width: 78%;
+    margin-left: 15%;
+}
+
+.work-image {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+}
+
+.image-placeholder {
+    background: var(--color-card);
+    color: var(--color-muted);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.image-placeholder span:first-child {
+    font-size: 11px;
+}
+
+.image-placeholder span:last-child {
+    font-size: 9px;
+}
+
+.work-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 15px;
+    padding-top: 18px;
+    border-top: 1px solid var(--color-line);
+    margin-top: 12px;
+}
+
+.work-caption h3 {
+    font-size: clamp(16px, 2vw, 23px);
+    font-weight: 500;
+    letter-spacing: -0.7px;
+    font-family: var(--font-display);
+}
+
+.work-caption p {
+    color: var(--color-muted);
+    text-align: right;
+}
+
+/* ABOUT */
+
+.about-section {
+    padding: 110px var(--page-padding);
+    background: var(--color-card);
+}
+
+.about-section h2 {
+    margin: 65px 0;
+    font-size: clamp(55px, 9vw, 120px);
+    line-height: 0.92;
+    letter-spacing: -0.085em;
+    font-family: var(--font-display);
+}
+
+.about-section h2 span {
+    color: var(--color-accent);
+    font-family: Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.06em;
+}
+
+
+.about-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+}
+
+.about-bottom p {
+    max-width: 420px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--color-muted);
+}
+
+.about-mark {
+    color: var(--color-muted);
+}
+
+/* CONTACT */
+
+.contact-section {
+    padding: 120px var(--page-padding);
+}
+
+.contact-section h2 {
+    margin: 65px 0 50px;
+    font-size: clamp(48px, 9vw, 120px);
+    line-height: 0.9;
+    letter-spacing: -0.085em;
+    font-family: var(--font-display);
+}
+
+.contact-section h2 span {
+    color: var(--color-olive);
+}
+
+.contact-link {
+    display: inline-block;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-text);
+}
+
+/* FOOTER */
+
+.site-footer {
+    padding: 30px var(--page-padding);
+    border-top: 1px solid var(--color-line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.site-footer p 
+    .site-footer p {
+    transition: color 0.3s ease;
+}
+
+.site-footer p:hover {
+    color: var(--color-accent);
+
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+    :root {
+        --page-padding: 6%;
+    }
+
+    .site-header {
+        min-height: 75px;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .navigation {
+        gap: 15px;
+    }
+
+    .navigation a {
+        font-size: 9px;
+    }
+
+    .availability {
+        display: none;
+    }
+
+    .hero {
+        min-height: 500px;
+        padding-top: 90px;
+    }
+
+    .hero h1 {
+        margin: 70px 0;
+        font-size: clamp(49px, 12vw, 85px);
+    }
+
+    .hero-bottom {
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .hero-index {
+        display: none;
+    }
+
+    .work-section,
+    .about-section,
+    .contact-section {
+        padding-top: 80px;
+        padding-bottom: 85px;
+    }
+
+    .work-grid {
+        grid-template-columns: 1fr;
+        row-gap: 55px;
+    }
+
+    .work-large,
+    .work-offset,
+    .work-item:nth-child(3) {
+        grid-column: 1;
+        width: 100%;
+        margin: 0;
+    }
+
+    .work-offset {
+        width: 85%;
+        margin-left: auto;
+    }
+
+    .work-caption {
+        flex-wrap: wrap;
+    }
+
+    .about-section h2 {
+        margin: 50px 0;
+    }
+
+    .about-bottom {
+        align-items: flex-start;
+    }
+
+    .about-mark {
+        display: none;
+    }
+
+    .site-footer {
+        flex-wrap: wrap;
+    }
+
+    .site-footer p {
+        font-size: 9px;
+    }
+}
+
+
+/* SCROLL REVEAL */
+
+@supports (animation-timeline: view()) {
+    .work-item {
+        opacity: 0;
+        transform: translateY(24px);
+        animation: reveal-work linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 35%;
+    }
+
+    @keyframes reveal-work {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* LOGO INTERACTION */
+
+.logo {
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.6;
+}
+/* ABSTRACT PAINTING BACKGROUND */
+
+body {
+    background-color: var(--color-bg);
+    background-image:
+        linear-gradient(
+            rgba(233, 227, 216, 0.72),
+            rgba(233, 227, 216, 0.72)
+        ),
+        url("image/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+/* SMOOTH SCROLL */
+
+html {
+    scroll-behavior: smooth;
+}
+/* JAPANESE SUN CURSOR */
+
+.custom-cursor {
+    width: 50px;
+    height: 50px;
+    background-color: #D62828;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}
